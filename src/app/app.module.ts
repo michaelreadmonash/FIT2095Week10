@@ -6,6 +6,15 @@ import { AddactorComponent } from './addactor/addactor.component';
 import { AddmovieComponent } from './addmovie/addmovie.component';
 import { ListactorsComponent } from './listactors/listactors.component';
 import { ListmoviesComponent } from './listmovies/listmovies.component';
+import { RouterModule, Routes } from '@angular/router';
+import { DatabaseService } from './database.service';
+
+const week10Routes:Routes=[
+  {path: 'addactor', component:AddactorComponent},
+  {path: 'addmovie', component:AddmovieComponent},
+  {path: 'listactors', component:ListactorsComponent},
+  {path: 'listmovies', component:ListmoviesComponent}
+];
 
 @NgModule({
   declarations: [
@@ -16,9 +25,10 @@ import { ListmoviesComponent } from './listmovies/listmovies.component';
     ListmoviesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, RouterModule.forRoot(week10Routes)
   ],
-  providers: [],
+  providers: [DatabaseService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
