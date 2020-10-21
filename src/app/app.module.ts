@@ -13,6 +13,7 @@ import { UpdateactorComponent } from './updateactor/updateactor.component';
 import { DeletemovieComponent } from './deletemovie/deletemovie.component';
 import { ActortomovieComponent } from './actortomovie/actortomovie.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const week10Routes:Routes=[
   {path: 'addactor', component:AddactorComponent},
@@ -41,7 +42,7 @@ const week10Routes:Routes=[
     NotfoundComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(week10Routes)
+    BrowserModule, RouterModule.forRoot(week10Routes), HttpClientModule
   ],
   providers: [DatabaseService],
   bootstrap: [AppComponent]
