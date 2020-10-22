@@ -15,6 +15,7 @@ import { ActortomovieComponent } from './actortomovie/actortomovie.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { Listmoviebefore2019Component } from './listmoviebefore2019/listmoviebefore2019.component';
 
 const week10Routes:Routes=[
   {path: 'addactor', component: AddactorComponent},
@@ -25,6 +26,7 @@ const week10Routes:Routes=[
   {path: 'updateactor', component: UpdateactorComponent},
   {path: 'deletemovie', component: DeletemovieComponent},
   {path: 'actortomovie', component: ActortomovieComponent},
+  {path: 'listmoviebefore2019', component: Listmoviebefore2019Component},
   {path: '', redirectTo: '/listactors', pathMatch: 'full'},
   {path: '**', component: NotfoundComponent}
 ];
@@ -40,7 +42,8 @@ const week10Routes:Routes=[
     UpdateactorComponent,
     DeletemovieComponent,
     ActortomovieComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    Listmoviebefore2019Component
   ],
   imports: [
     RouterModule.forRoot(week10Routes), BrowserModule, HttpClientModule, FormsModule

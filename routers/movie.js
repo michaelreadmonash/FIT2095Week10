@@ -136,4 +136,11 @@ router.post('/:movieTitle/:actorName', (req, res) => {
     });
 });
 
+router.get('/movies/2019/test', (req, res) => {
+    Movie.find({}).where('year').lt(2019).exec((err, movies) => {
+        if (err) return res.status(400).json(err);
+        res.json(movies);
+    })
+})
+
 module.exports = router;

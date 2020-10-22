@@ -37,7 +37,6 @@ export class DatabaseService {
     return this.http.delete(url, httpOptions);
   }
   
-  
   getMovies() {
     return this.http.get('/movies');
   }
@@ -60,5 +59,9 @@ export class DatabaseService {
     let url = "/movies/" + movie + '/' + actor;
     console.log(url);
     return this.http.post(url, httpOptions);
+  }
+
+  getMovieBefore2019() {
+    return this.http.get('/movies/movies/2019/test');
   }
 }
