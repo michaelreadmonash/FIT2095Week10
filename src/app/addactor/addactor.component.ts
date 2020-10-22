@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { DatabaseService } from '../database.service';
 
 @Component({
   selector: 'app-addactor',
   templateUrl: './addactor.component.html',
   styleUrls: ['./addactor.component.css']
 })
-export class AddactorComponent implements OnInit {
+export class AddactorComponent {
 
-  constructor() { }
+  fullName: string = "";
+  bYear: number = 0;
 
-  ngOnInit(): void {
-  }
+  constructor(private db:DatabaseService) { }
 
+    //Create a new Actor, POST request
+    saveActor() {
+      let obj = { name: this.fullName, bYear: this.bYear };
+      this.db.createActor(obj).subscribe(result => {
+        alert(this.fullName + " has been saved into the system.")
+      });
+    }
 }

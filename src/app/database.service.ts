@@ -37,4 +37,28 @@ export class DatabaseService {
     return this.http.delete(url, httpOptions);
   }
   
+  
+  getMovies() {
+    return this.http.get('/movies');
+  }
+
+  getMovie(id: string) {
+    let url = "/movies/" + id;
+    return this.http.get(url);
+  }
+
+  createMovie(data) {
+    return this.http.post("/movies", data, httpOptions);
+  }
+
+  deleteMovie(id) {
+    let url = "/movies/" + id;
+    return this.http.delete(url, httpOptions);
+  }
+
+  addActorMovie(movie, actor) {
+    let url = "/movies/" + movie + '/' + actor;
+    console.log(url);
+    return this.http.post(url, httpOptions);
+  }
 }

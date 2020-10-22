@@ -14,6 +14,7 @@ import { DeletemovieComponent } from './deletemovie/deletemovie.component';
 import { ActortomovieComponent } from './actortomovie/actortomovie.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 const week10Routes:Routes=[
   {path: 'addactor', component:AddactorComponent},
@@ -42,7 +43,7 @@ const week10Routes:Routes=[
     NotfoundComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(week10Routes), HttpClientModule
+    BrowserModule, RouterModule.forRoot(week10Routes), HttpClientModule, FormsModule
   ],
   providers: [DatabaseService],
   bootstrap: [AppComponent]

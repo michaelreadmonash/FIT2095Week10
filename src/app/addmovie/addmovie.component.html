@@ -1,1 +1,18 @@
-<p>addmovie works!</p>
+<div class="section">
+  <p class="h1">All Movies</p>
+  <table class="table table-striped">
+    <tr>
+      <th>Title</th>
+      <th>Actor</th>
+      <th>Year</th>
+    </tr>
+    <tr *ngFor="let item of moviesDB">
+      <td>{{item.title}}</td>
+      <td *ngIf="item.actors.length > 0">
+        {{item.actors[0].name}}
+      </td>
+      <td *ngIf="item.actors.length == 0">No Actor Found</td>
+      <td>{{item.year}}</td>
+    </tr>
+  </table>
+</div>

@@ -7,6 +7,7 @@ const movies = require('./routers/movie');
 
 const actorsRouter = require("./routers/actor");
 const moviesRouter = require("./routers/movie");
+const path = require("path");
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.listen(8080);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use("/", express.static(path.join(__dirname, "dist/lab10")));
 
 app.use('/actors', actorsRouter);
 app.use('/movies', moviesRouter);
