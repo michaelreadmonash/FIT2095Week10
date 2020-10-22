@@ -1,1 +1,46 @@
-<p>actortomovie works!</p>
+<div class="section">
+  <p class="h1">Add Actor to Movie</p>
+
+  <table class="table table-striped">
+
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Add Movie</th>
+    </tr>
+
+    <tr *ngFor="let item of moviesDB">
+      <td>{{item.title}}</td>
+      <td>{{item.year}}</td>
+      <td><button type="submit" class="btn btn-success" (click)="addMovie(item)">+</button></td>
+    </tr>
+
+  </table>
+
+  <br><br>
+
+  <table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Birth Year</th>
+      <th>Add Actor</th>
+    </tr>
+    <tr *ngFor="let item of actorsDB">
+      <td>{{item.name}}</td>
+      <td>{{item.bYear}}</td>
+      <td><button class="btn btn-success" (click)="addActor(item)">+</button></td>
+    </tr>
+  </table>
+
+  <div class="form-group">
+    <label for="movieLabel">Movie</label>
+    <input type="text" id="movieLabel" class="form-control" disabled [(ngModel)]="movie">
+    <label for="actorLabel">Actor</label>
+    <input type="text" id="actorLabel" class="form-control" disabled [(ngModel)]="actor">
+  </div>
+
+  <button class="btn btn-success" (click)="addActorMovie(movie, actor)">Add Actor to Movie</button>
+
+  <br><br>
+
+</div>

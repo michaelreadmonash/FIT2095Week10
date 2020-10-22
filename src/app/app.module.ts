@@ -17,16 +17,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 const week10Routes:Routes=[
-  {path: 'addactor', component:AddactorComponent},
-  {path: 'addmovie', component:AddmovieComponent},
-  {path: 'listactors', component:ListactorsComponent},
-  {path: 'listmovies', component:ListmoviesComponent},
-  {path: 'deleteactor', component:DeleteactorComponent},
-  {path: 'updateactor', component:UpdateactorComponent},
-  {path: 'deletemovie', component:DeletemovieComponent},
-  {path: 'actortomovie', component:ActortomovieComponent},
-  {path: 'notfound', component:NotfoundComponent},
-  {path: '**', redirectTo: '/notfound', pathMatch: 'full'}
+  {path: 'addactor', component: AddactorComponent},
+  {path: 'addmovie', component: AddmovieComponent},
+  {path: 'listactors', component: ListactorsComponent},
+  {path: 'listmovies', component: ListmoviesComponent},
+  {path: 'deleteactor', component: DeleteactorComponent},
+  {path: 'updateactor', component: UpdateactorComponent},
+  {path: 'deletemovie', component: DeletemovieComponent},
+  {path: 'actortomovie', component: ActortomovieComponent},
+  {path: '', redirectTo: '/listactors', pathMatch: 'full'},
+  {path: '**', component: NotfoundComponent}
 ];
 
 @NgModule({
@@ -43,7 +43,7 @@ const week10Routes:Routes=[
     NotfoundComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(week10Routes), HttpClientModule, FormsModule
+    RouterModule.forRoot(week10Routes), BrowserModule, HttpClientModule, FormsModule
   ],
   providers: [DatabaseService],
   bootstrap: [AppComponent]

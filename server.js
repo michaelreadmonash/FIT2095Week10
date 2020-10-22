@@ -20,7 +20,7 @@ app.use("/", express.static(path.join(__dirname, "dist/lab10")));
 app.use('/actors', actorsRouter);
 app.use('/movies', moviesRouter);
 
-mongoose.connect('mongodb://localhost:27017/lab7db', function (err) {
+mongoose.connect('mongodb://localhost:27017/lab10db', function (err) {
     if (err) {
         return console.log('Mongoose - connection error:', err);
     }
