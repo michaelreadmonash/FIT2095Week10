@@ -1,18 +1,12 @@
 <div class="section">
-  <p class="h1">All Movies</p>
-  <table class="table table-striped">
-    <tr>
-      <th>Title</th>
-      <th>Actor</th>
-      <th>Year</th>
-    </tr>
-    <tr *ngFor="let item of moviesDB">
-      <td>{{item.title}}</td>
-      <td *ngIf="item.actors.length > 0">
-        {{item.actors[0].name}}
-      </td>
-      <td *ngIf="item.actors.length == 0">No Actor Found</td>
-      <td>{{item.year}}</td>
-    </tr>
-  </table>
+  <p class="h1">Add Movie</p>
+  <div class="form-group">
+    <label for="movieTitle">Movie Title</label>
+    <input type="text" class="form-control" id="movieTitle" [(ngModel)]="title">
+  </div>
+  <div class="form-group">
+    <label for="movieYear">Year</label>
+    <input type="number" class="form-control" id="movieYear" minlength="4" maxlength="4" [(ngModel)]="year">
+  </div>
+  <button type="submit" class="btn btn-success" (click)="saveMovie()">Save Movie</button>
 </div>

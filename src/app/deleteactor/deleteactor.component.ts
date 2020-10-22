@@ -17,10 +17,18 @@ export class DeleteactorComponent implements OnInit {
     this.getActors();
   }
 
+  //Get actors
   getActors() {
     this.db.getActors().subscribe((data:any[]) => {
       this.actorsDB = data;
     })
   }
 
+  //Delete Actor
+  deleteActor(item) {
+    this.db.deleteActor(item._id).subscribe(result => {
+      alert(item.name + " has been deleted from the system.")
+      this.getActors();
+    });
+  }
 }
